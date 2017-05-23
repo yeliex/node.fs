@@ -15,7 +15,7 @@ keys.forEach((key) => {
     return;
   }
   const methods = {
-    [key]: (...props) => new Promise((rec, rej) => {
+    [`${key}Async`]: (...props) => new Promise((rec, rej) => {
       originMethod(...props, (error, data) => {
         if (error) {
           rej(error);
@@ -26,7 +26,7 @@ keys.forEach((key) => {
     })
   };
 
-  module.exports[key] = methods[`${key}Sync`];
+  module.exports[key] = methods[`${key}Async`];
   if (originMethodSync) {
     module.exports[`${key}Sync`] = originMethodSync;
   }
