@@ -1,6 +1,6 @@
 {
   "name": "node.fs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Promisify fs",
   "main": "src/index.js",
   "scripts": {
